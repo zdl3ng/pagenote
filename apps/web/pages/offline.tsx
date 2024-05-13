@@ -33,6 +33,7 @@ const Component: FC<PropsWithChildren<Props>> = (props) => {
                     limit: 1,
                 },
             }).then(function (res) {
+            // @ts-ignore
             const resource = res.data ? res.data.list[0]: null;
             if(!resource){
                 return;

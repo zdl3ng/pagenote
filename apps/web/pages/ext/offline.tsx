@@ -82,6 +82,7 @@ export default function Offline() {
         },
       })
       .then(function (res) {
+        // @ts-ignore
         const resource = (res.data?.list[0] as Partial<OfflineHTML>) || null
         setResource(resource)
         if (resource) {

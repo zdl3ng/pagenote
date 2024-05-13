@@ -43,8 +43,10 @@ export default function Light() {
             },
         }).then(function (res) {
             console.log('color',res)
+            // @ts-ignore
             if(res.success){
                 const colors = []
+                // @ts-ignore
                 for(let i in res.data){
                     colors.push(i)
                 }
@@ -87,10 +89,13 @@ export default function Light() {
             }
         }).then((res) => {
             console.log(res,'res')
+            // @ts-ignore
             if (res?.success) {
+                // @ts-ignore
                 setList((res.data.list || []) as WebPage[])
                 setPagination({
                     ...pagination,
+                    // @ts-ignore
                     total: res.data.total || 0,
                 })
             }

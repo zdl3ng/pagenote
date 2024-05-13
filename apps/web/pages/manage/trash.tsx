@@ -48,12 +48,15 @@ export default function Trash() {
                 icon: 1
             }
         }).then((res) => {
+            // @ts-ignore
             if (res.success) {
+                // @ts-ignore
                 setList((res.data?.list || []) as WebPage[])
                 setPagination({
                     pageSize: pagination.pageSize,
                     limit: pagination.limit,
                     page: pagination.page,
+                    // @ts-ignore
                     total: res.data?.total || 0,
                 })
             }

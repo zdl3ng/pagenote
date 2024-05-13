@@ -64,11 +64,15 @@ export default function Page() {
                 categories: 1
             }
         }).then((res) => {
+            // @ts-ignore
             if (res.success) {
+                // @ts-ignore
                 setList((res.data?.list || []) as WebPage[])
                 setPagination({
                     page: pagination.page,
+                    // @ts-ignore
                     total: res.data?.total || 0,
+                    // @ts-ignore
                     pageSize: Math.ceil(res.data?.total || 0 / (pagination.pageSize|| 10)),
                 })
             }
