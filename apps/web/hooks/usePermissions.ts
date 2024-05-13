@@ -13,6 +13,7 @@ export default function usePermissions(): [Permission | undefined,(permission:Pe
             type: "getAll"
         });
         console.log(res, 'permissions');
+        // @ts-ignore
         return (res?.data || {
             permissions: [],
             origins: []

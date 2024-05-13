@@ -23,6 +23,7 @@ export default function useLights(pageKey: string) {
         pageSize: 9999,
       })
       .then(function (res) {
+        // @ts-ignore
         return res.data?.list || []
       })
   }

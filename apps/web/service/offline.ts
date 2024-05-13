@@ -44,6 +44,7 @@ export function openHtml(id?:string,html?:string) {
             }
         })
         .then(function (res) {
+            // @ts-ignore
             const html = res?.data?.list[0] as OfflineHTML;
             if(!html){
                 return;

@@ -79,7 +79,9 @@ export default function FeedbackForm(props: { onSubmit: () => void }) {
         }
       )
       .then(function (res) {
+        // @ts-ignore
         if (res?.success && res.data?.json.success) {
+          // @ts-ignore
           setFeedbackId(res.data.json?.data?.postFeedback?.feedbackId)
         } else {
           toast('提交失败')

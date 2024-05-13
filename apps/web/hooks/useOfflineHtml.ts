@@ -31,6 +31,7 @@ export default function useOfflineHtml() {
         }
       )
       .then(function (res) {
+          // @ts-ignore
         return res.data as unknown as
             Record<string, TableSchemaBasicFields & { name?: string }[]>
       })

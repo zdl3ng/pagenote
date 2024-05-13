@@ -31,6 +31,7 @@ export default function useUserConfig<T extends ConfigItem>(
         },
       })
       .then(function (res) {
+          // @ts-ignore
         if (res.success) {
           //@ts-ignore
           const object = configArrayToObject(res?.data?.list || [])

@@ -63,6 +63,7 @@ export default function ImportFilter(props: {
       )
       .then(function (res) {
         console.log(res, '导入结果')
+        // @ts-ignore
         if (res.success) {
           toast({
             title: '导入成功',
@@ -74,6 +75,7 @@ export default function ImportFilter(props: {
         } else {
           toast({
             title: '导入失败',
+            // @ts-ignore
             content: res.error,
           })
         }

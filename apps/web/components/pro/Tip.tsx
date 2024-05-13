@@ -37,7 +37,9 @@ export default function Tip(props: {
     setLoading(true)
     bindTransition(value.recordId, plan.price).then(function (res) {
       setLoading(false)
+      // @ts-ignore
       toast(res.data?.json?.success ? '提交成功' : '提交失败')
+      // @ts-ignore
       if (res?.data?.json?.success) {
         onClose()
       }

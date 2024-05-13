@@ -24,6 +24,7 @@ export default function useKeys<T>(collection: Collection, key: string) {
         }
       )
       .then(function (res) {
+        // @ts-ignore
         return res.data
       })
   }

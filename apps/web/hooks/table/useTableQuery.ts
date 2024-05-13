@@ -22,6 +22,7 @@ export default function useTableQuery<T>(
         params: find,
       })
       .then(function (res) {
+        // @ts-ignore
         return (res.data?.list || []) as Partial<T>[]
       })
   }

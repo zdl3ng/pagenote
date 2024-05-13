@@ -37,6 +37,7 @@ export default function ():[VersionInfo,()=>void] {
             }
         }).then(function (res) {
             return {
+                // @ts-ignore
                 list: res.data?.json?.data?.versions || [],
                 isOut: false,
                 latest: "",

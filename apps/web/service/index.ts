@@ -72,7 +72,8 @@ export function fetchVersions() {
       }
     )
     .then(function (res) {
-      return res?.data?.json?.data?.versions || []
+      // @ts-ignore
+        return res?.data?.json?.data?.versions || []
     })
 }
 
@@ -95,7 +96,8 @@ export function fetchVersionDetail(version: string) {
       }
     )
     .then(function (res) {
-      return res?.data?.json?.data?.versionDetail || null
+      // @ts-ignore
+        return res?.data?.json?.data?.versionDetail || null
     })
 }
 

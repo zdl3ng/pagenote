@@ -13,6 +13,7 @@ function fetchStatus(tabId?: number) {
       },
     })
     .then(function (res) {
+      // @ts-ignore
       return res.data as TabState
     })
 }

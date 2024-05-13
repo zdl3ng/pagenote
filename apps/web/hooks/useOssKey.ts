@@ -26,6 +26,7 @@ export function fetchUploadToken(type: OssType) {
       }
     )
     .then(function (res) {
+        // @ts-ignore
       const data = res?.data?.json?.data?.ossKey
       if (!data) {
         return null

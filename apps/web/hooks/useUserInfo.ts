@@ -22,6 +22,7 @@ export function fetchUserInfo(forceRefresh: boolean = false, timeout = 0) {
       }
     )
     .then(function (res) {
+        // @ts-ignore
       return (res.data || null) as UserInfo
     })
 }

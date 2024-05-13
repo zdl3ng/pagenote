@@ -83,6 +83,7 @@ async function searchInPage(keyword: string, operation: '$or' | '$and') {
     }
   )
 
+  // @ts-ignore
   return result?.data?.list || []
 }
 
@@ -127,6 +128,7 @@ async function searchInLight(keyword: string, operation: '$or' | '$and') {
       },
     }
   )
+  // @ts-ignore
   return lightResult?.data?.list || []
 }
 
@@ -221,7 +223,7 @@ export async function searchInExt(
         if (words.length === 1) {
           callback(pageResult)
         }
-        pageResult.forEach(function (item) {
+        pageResult.forEach(function (item: Partial<WebPage>) {
           const key: string = item.key || item.url || ''
           mark('page', key, i, 1)
           dataMap.page[key] = item
@@ -231,7 +233,7 @@ export async function searchInExt(
 
     tasks.push(
       searchInLight(keyword, '$or').then(function (lights) {
-        lights.forEach(function (item) {
+        lights.forEach(function (item: Partial<Step>) {
           const key: string = item.key || item.url || ''
           mark('light', key, i, 1)
           dataMap.light[key] = item
@@ -315,6 +317,7 @@ export function getPageDetail(key: string) {
       key: key,
     })
     .then(function (res) {
+      // @ts-ignore
       return res.data
     })
 }

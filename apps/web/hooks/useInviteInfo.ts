@@ -14,6 +14,7 @@ export function fetchInfo() {
         url: '/api/',
         method: "GET"
     }).then(function (res) {
+        // @ts-ignore
         return res.data?.json
     })
 }

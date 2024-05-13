@@ -40,7 +40,9 @@ export default function LightedTab(props: { tab: Tab; isCurrent: boolean }) {
         },
       })
       .then(function (res) {
+        // @ts-ignore
         if (res.success) {
+          // @ts-ignore
           setLights(res.data.list || [])
         }
       })

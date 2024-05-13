@@ -18,7 +18,9 @@ export default function useWhoAmi(
   })
 
   function fetchInfo() {
+    // @ts-ignore
     return extApi.user.getWhoAmI().then(function (res) {
+      // @ts-ignore
       return res.data || {}
     })
   }

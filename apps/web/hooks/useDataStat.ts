@@ -50,10 +50,15 @@ export default function useDataStat(): [StatInfo | undefined, () => void] {
     })
 
     return {
+      // @ts-ignore
       lightsCnt: lights.data.total,
+      // @ts-ignore
       pagesCnt: pages.data?.total || 0,
+      // @ts-ignore
       snapshotsCnt: snapshots.data.total,
+      // @ts-ignore
       todayNewLights: todayLights.data.total,
+      // @ts-ignore
       clipboardCnt: clipboards.data || 0,
     }
   }

@@ -62,6 +62,7 @@ export function PageInfo(props:{pageUrl: string}) {
         type: 'offlineHTML',
       })
       .then(function (res) {
+        // @ts-ignore
         toast(res?.error || '存档成功。')
         setTimeout(function () {
           window.close()

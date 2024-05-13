@@ -42,6 +42,7 @@ export default function ClipboardList() {
       })
       .then(function (res) {
         loadBoxList()
+        // @ts-ignore
         if (res.success) {
           setSelected([])
         }
@@ -73,7 +74,9 @@ export default function ClipboardList() {
         },
       })
       .then((res) => {
+        // @ts-ignore
         if (res.success) {
+          // @ts-ignore
           setList((res.data?.list || []) as Box[])
         }
       })

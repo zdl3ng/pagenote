@@ -11,9 +11,11 @@ export default function useConfig(): IConfig{
     const {data} = useSWR<IConfig>('/config',fetchLocalAndServerSetting)
 
     function fetchLocalAndServerSetting (){
+        // @ts-ignore
         return extApi.setting.getSearchEngines().then((result)=>{
             return {
                 ...data,
+                // @ts-ignore
                 searchEngines: result.data
             };
         })

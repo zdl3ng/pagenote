@@ -32,8 +32,10 @@ export default function FeedbackList() {
         },
       })
       .then(function (res) {
+        // @ts-ignore
         if (res?.data?.json?.success) {
           console.log('list', res)
+          // @ts-ignore
           setList(res.data.json?.data?.listFeedback)
         }
       })

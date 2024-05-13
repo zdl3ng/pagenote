@@ -21,10 +21,11 @@ export default function useSettings(): {
 
   function fetchLocalAndServerSetting() {
     setLoading(true)
-    return extApi.setting
-      .getUserSetting()
+    // @ts-ignore
+    return extApi.setting.getUserSetting()
       .then((result) => {
         setLoading(false)
+        // @ts-ignore
         return result.data || getDefaultSdkSetting()
       })
       .catch(function () {

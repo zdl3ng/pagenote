@@ -54,11 +54,14 @@ export default function Logs(props: { levels?: LogLevel[], initPageSize?: number
                 id: -1
             }
         }).then(function (res) {
+            // @ts-ignore
             if (res?.success) {
+                // @ts-ignore
                 setLogs(res.data?.list || [])
                 setPagination({
                     page: page,
                     pageSize: pageSize,
+                    // @ts-ignore
                     totalPages: Math.ceil((res.data?.total || 0) / pageSize),
                 })
             }
@@ -69,7 +72,9 @@ export default function Logs(props: { levels?: LogLevel[], initPageSize?: number
 
     function downloadLogs() {
         extApi.developer.downloadLog({}).then(function (res) {
+            // @ts-ignore
             if (res?.success) {
+                // @ts-ignore
                 toast('已下载，文件' + res.data?.filename)
             }
         })

@@ -41,6 +41,7 @@ export function openUrlInGroup(url: string,groupInfo:{
     },{
         timeout: 1000
     }).then(function(res){
+        // @ts-ignore
         if(res.success){
             clearTimeout(timer)
         }

@@ -16,7 +16,9 @@ export default function PopupLights(props:{tab: Tab}) {
                 url: tab?.url
             }
         }).then(function (res) {
+            // @ts-ignore
             if (res.success) {
+                // @ts-ignore
                 setLights(res.data.list)
             }
         })

@@ -62,8 +62,11 @@ export default function BackupList() {
         page: page,
       })
       .then(async (res) => {
+        // @ts-ignore
         if (res.success) {
+          // @ts-ignore
           lights = lights.concat(res.data.list as Step[])
+          // @ts-ignore
           if (res.data.has_more) {
             /**避免数据量过大，无法通过单次请求拉取完，采用递归方式分批次拉取*/
             const result = await getAllLights(page + 1)
@@ -90,9 +93,12 @@ export default function BackupList() {
         page: page,
       })
       .then(async (res) => {
+        // @ts-ignore
         if (res.success) {
+          // @ts-ignore
           pages = pages.concat(res.data?.list || [])
           console.log('pages:', res)
+          // @ts-ignore
           if (res.data?.has_more) {
             const result = await getAllPages(page + 1)
             pages = pages.concat(result)
@@ -115,8 +121,11 @@ export default function BackupList() {
         page: page,
       })
       .then(async function (res) {
+        // @ts-ignore
         if (res.success) {
+          // @ts-ignore
           snapshots = snapshots.concat(res.data.list)
+          // @ts-ignore
           if (res.data.has_more) {
             const result = await getAllSnapshots(page + 1)
             snapshots = snapshots.concat(result)

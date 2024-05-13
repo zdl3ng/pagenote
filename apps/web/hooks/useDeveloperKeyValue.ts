@@ -13,6 +13,7 @@ export default function useDeveloperKeyValue<T>(key: string = 'tab_capture'): [T
     function fetchData() {
         return extApi.commonAction.getPersistentValue(key || '').then(function (res) {
             console.log(res, 'key', key)
+            // @ts-ignore
             return res.data;
         })
     }

@@ -29,6 +29,7 @@ export default function TodayRelated() {
                 maxAgeMillisecond: 60000
             }
         }).then(function (res) {
+            // @ts-ignore
             setList(res?.data?.list||[])
         })
     }

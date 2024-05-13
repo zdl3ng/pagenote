@@ -15,6 +15,7 @@ export default function useShortcut():[Command[]|undefined,Record<string, Comman
             type: 'getAll',
             args:[]
         }).then(function (res) {
+            // @ts-ignore
             return res.data
         })
     }

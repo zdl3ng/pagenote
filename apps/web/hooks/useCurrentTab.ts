@@ -21,7 +21,8 @@ export default function useCurrentTab():{tab: Tab | undefined, windows: TabGroup
   async function getTabInfo() {
     let currentTabId: number|undefined;
     if(!currentTabId){
-      const result = await extApi.user.getWhoAmI();
+      // @ts-ignore
+        const result = await extApi.user.getWhoAmI();
       // @ts-ignore;
       const tab = result.data?.sender?.tab as Tab;
       currentTabId = tab?.id;
@@ -34,6 +35,7 @@ export default function useCurrentTab():{tab: Tab | undefined, windows: TabGroup
             namespace: 'tabs',
             args: [{ active: true, lastFocusedWindow: true }],
           });
+        // @ts-ignore
       lastTab = (res.data || [])[0] || lastTab
       currentTabId = lastTab?.id;
     }
@@ -45,6 +47,7 @@ export default function useCurrentTab():{tab: Tab | undefined, windows: TabGroup
           args: [currentTabId],
         })
         .then(function (res) {
+            // @ts-ignore
           return res.data as Tab
         })
   }
@@ -52,6 +55,7 @@ export default function useCurrentTab():{tab: Tab | undefined, windows: TabGroup
   function getAllWindows() {
     return extApi.commonAction.queryTabs({}).then(function (res) {
       const windowMap: WindowMap = new Map<number, TabGroups>();
+        // @ts-ignore
       (res.data || []).forEach(function (item: Tab) {
         const newTabs = (windowMap.get(item.windowId) || []).concat(item)
         windowMap.set(item.windowId, newTabs)

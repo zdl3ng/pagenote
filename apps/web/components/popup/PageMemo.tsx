@@ -143,9 +143,11 @@ export default function PageMemo(props: Props) {
         params: [memo],
       })
       .then(function (res) {
+        // @ts-ignore
         if (res.error) {
           toast({
             title: '创建失败',
+            // @ts-ignore
             description: res.error,
           })
         }

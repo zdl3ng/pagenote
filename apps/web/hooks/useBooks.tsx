@@ -58,6 +58,7 @@ export default function (): [BookInfo, () => void] {
         }
       )
       .then(function (res) {
+        // @ts-ignore
         const bookList = res.data?.json?.data.books
         if (Array.isArray(bookList)) {
           const endTime = bookList[0].endTime

@@ -9,7 +9,9 @@ import {
 let byExtFlag: boolean | null = null
 
 async function checkExtAlive() {
+  // @ts-ignore
   const result = await extApi.user.getWhoAmI()
+  // @ts-ignore
   byExtFlag = !!result?.data?.version
 }
 
@@ -30,6 +32,7 @@ export async function unionFetch<T>(
   if (byExtFlag) {
     return extApi.network.pagenote(request, header).then(function (res) {
       // 代理超时，重新请求
+      // @ts-ignore
       if (res?.status === RESPONSE_STATUS_CODE.TIMEOUT) {
         checkExtAlive()
         if (!retry && request.method !== 'POST') {
@@ -37,6 +40,7 @@ export async function unionFetch<T>(
           return unionFetch(request, header, true)
         }
       }
+      // @ts-ignore
       return res?.data?.json
     })
   } else {

@@ -23,6 +23,7 @@ export default function useTableKeys<T>(
                 },
             })
             .then(function (res) {
+                // @ts-ignore
                 return ( res.data || []) as string[]
             })
     }

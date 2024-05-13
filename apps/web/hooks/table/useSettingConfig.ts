@@ -25,6 +25,7 @@ export default function useSettingConfig(
         },
       })
       .then(function (res) {
+          // @ts-ignore
         const configList = (res.data?.list || []) as config.ConfigItem[];
         const object = configArrayToObject(configList);
         return object;

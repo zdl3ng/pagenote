@@ -21,6 +21,7 @@ export default function useStorage(
         params: undefined,
       })
       .then(function (res) {
+          // @ts-ignore
         return res.data || { usage: 0 }
       })
   }
